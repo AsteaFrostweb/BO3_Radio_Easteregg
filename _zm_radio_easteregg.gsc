@@ -55,7 +55,7 @@ function setup_radio(sound_name)
 
 		}else
 		{			
-			PlaySoundAtPosition(sound_name, self.origin);			//(melle only KVP unspecified)
+			PlaySoundAtPosition(sound_name, self.origin);			//(melee only KVP unspecified)
 			break;
 		}	
 	}        
