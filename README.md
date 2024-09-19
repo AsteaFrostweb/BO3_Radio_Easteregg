@@ -23,3 +23,4 @@ Adds "Radio's" to your map much like the ones found on Der Reise.
 ### Considerations
 * Sound aliases that you want to get quieter over distance should have template "AMB_AMBIENCE_3D_MOD".
 * Sound aliases that you want to be as non range dependant should have template "UIN_MOD".
+* The model you've used must have a "BulletCollisionLOD" of at least "LOD0" in APE or the collision detection wont work.
