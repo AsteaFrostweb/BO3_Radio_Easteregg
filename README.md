@@ -7,7 +7,7 @@ Adds "Radio's" to your map much like the ones found on Der Reise.
 * [Google Drive Link](https://drive.google.com/file/d/1zrS4KP0zDVkjUtPdQ7s1fP4X5gN_U1i5/view?usp=sharing) Alternativley download .rar from google drive and extract to folder.
 
 ### File Additions
-* Move the "_zm_radio_easteregg.gsc" file from the downloaded folder into the "Call of Duty Black Ops III\share\raw\scripts\zm" folder.
+* Move the `_zm_radio_easteregg.gsc` file from the downloaded folder into the `Call of Duty Black Ops III\share\raw\scripts\zm` folder.
   
 ### Code/Config Additions
 1. Add `#using scripts\zm\_zm_radio_easteregg;` to the top of your zm_[mapname].gsc with the other using statements.
@@ -23,4 +23,4 @@ Adds "Radio's" to your map much like the ones found on Der Reise.
 ### Considerations
 * Sound aliases that you want to get quieter over distance should have template "AMB_AMBIENCE_3D_MOD".
 * Sound aliases that you want to be as non range dependant should have template "UIN_MOD".
-* The model you've used must have a "BulletCollisionLOD" of at least "LOD0" in APE or the collision detection wont work.
+* The model you've used must have a "BulletCollisionLOD" of at least "LOD0" in APE or the collision detection won't work.
