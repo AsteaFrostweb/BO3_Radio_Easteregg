@@ -24,7 +24,7 @@ function init()
         }        
     } 
 }
-function setup_radio(sound_name)
+function private setup_radio(sound_name)
 {    
 	level endon( "end_game" );
     self endon( "disconnect" );
@@ -33,6 +33,10 @@ function setup_radio(sound_name)
     self UseTriggerRequireLookAt(); 
 	self setcandamage(true);	
 
+	if(self.script_string == undefined)
+	{
+		return; //return if the sound anme to play hasnt been specified
+	}
 
 	while(1)
 	{
@@ -42,21 +46,23 @@ function setup_radio(sound_name)
 		//Check if the melee only kvp is  specified
 		if(self.script_int != undefined)
 		{
-			
-			if(self.script_int == 1 && ( ( isDefined(str_type) && str_type == "MOD_MELEE" ) || ( isDefined(w_weapon) && zm_utility::is_melee_weapon(w_weapon) ) ))
-			{		
-				PlaySoundAtPosition(sound_name, self.origin);		//(melee only)	
-				break;				
-			}else
+			if(self.script_int == 1)
 			{
+				if(( ( isDefined(str_type) && str_type == "MOD_MELEE" ) || ( isDefined(w_weapon) && zm_utility::is_melee_weapon(w_weapon) ) ))
+				{						
+					PlaySoundAtPosition(sound_name, self.origin);		//(melee only)	
+					break;				
+				}
+			}			
+			else
+			{				
 				PlaySoundAtPosition(sound_name, self.origin);		//(not melee only)	
 				break;	
 			}
-
 		}else
-		{			
-			PlaySoundAtPosition(sound_name, self.origin);			//(melee only KVP unspecified)
-			break;
-		}	
+		{
+			PlaySoundAtPosition(sound_name, self.origin);		//(not melee only)	
+			break;	
+		}
 	}        
 }
