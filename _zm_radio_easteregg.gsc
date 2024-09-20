@@ -10,10 +10,9 @@ function init()
 {
     //Get radio triggers
     radios = GetEntArray("radio","targetname");
-    count = 0;
+    
     foreach(radio in radios)
-    {
-        count++;
+    {      
         if(radio.script_string == undefined)
         {
             IPrintLnBold("Radio with unspecified soundname");
